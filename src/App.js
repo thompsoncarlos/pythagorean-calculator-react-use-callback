@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Calculator from './Calculator';
 
 function App() {
+  
+  const hypotenuseCalc = (sideA, sideB) => {
+    const squaredA = Math.pow(sideA, 2)
+    const squaredB = Math.pow(sideB, 2)
+    return Math.sqrt(squaredA + squaredB)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img style={{ maxWidth: '500px' }} src="images/rigth-triangle.png" alt="Rigth triangle"/>
+     <Calculator hypotenuseCalc={hypotenuseCalc}/>
     </div>
   );
 }
